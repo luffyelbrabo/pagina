@@ -12,8 +12,18 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
       margin: 0;
+    }
+
+    .store-header {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1;
     }
 
     h1 {
@@ -35,10 +45,8 @@
       text-align: center;
       padding: 20px;
       border: 2px solid #333;
-      border-top: 0;
       margin-bottom: 20px;
       width: 80%;
-      height: 100%;
       box-sizing: border-box;
     }
 
@@ -71,7 +79,11 @@
 </head>
 
 <body>
-  <div class="store-title">LOJA DE APLICATIVOS</div>
+  <div class="store-header">
+    <div class="store-title">LOJA DE APLICATIVOS</div>
+  </div>
+
+  <div style="height: 80px;"></div> <!-- EspaÃ§o entre a barra e o conteÃºdo -->
 
   <div class="app-container">
     <img class="app-logo" src="logo_app1.png" alt="Logo App 1">
