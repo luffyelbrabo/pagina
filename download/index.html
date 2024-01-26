@@ -24,11 +24,9 @@
       position: fixed;
       top: 0;
       z-index: 1;
-    }
-
-    h1 {
-      color: #333;
-      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     .store-title {
@@ -36,6 +34,24 @@
       font-weight: bold;
       margin-bottom: 20px;
       color: #333;
+    }
+
+    .menu-btn {
+      font-size: 24px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 10px;
+      margin-right: 10px; /* Mudei de margin-left para margin-right */
+      order: 1;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
     }
 
     .app-container {
@@ -77,9 +93,48 @@
       cursor: pointer;
     }
 
-    /* Adicionando espaÃÂ§o entre as abas dos aplicativos */
     .app-container + .app-container {
       margin-top: 20px;
+    }
+
+    .side-menu {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      z-index: 2;
+    }
+
+    .side-menu a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .side-menu a:hover {
+      color: #f1f1f1;
+    }
+
+    .side-menu .close-btn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .menu-btn {
+      margin-top: 10px;
+      margin-right: 10px;
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -87,9 +142,21 @@
 <body>
   <div class="store-header">
     <div class="store-title">LOJA DE APLICATIVOS</div>
+    <button class="menu-btn" onclick="openSideMenu()">☰ Menu</button>
   </div>
 
-  <div style="height: 80px;"></div> <!-- EspaÃÂ§o entre a barra e o conteÃÂºdo -->
+  <div style="height: 10px; background-color: #ddd;"></div>
+
+  <div style="height: 20px;"></div>
+
+  <div class="side-menu" id="sideMenu">
+    <a href="javascript:void(0)" class="close-btn" onclick="closeSideMenu()">×</a>
+    <a href="tutoriais/">TUTORIAIS</a>
+    <a href="contato/">CONTATO</a>
+    <a href="sobre/">SOBRE</a>
+  </div>
+
+  <div style="height: 80px;"></div>
 
   <div class="app-container">
     <img class="app-logo" src="img/logo_app1.png" alt="Logo App 1">
@@ -106,34 +173,24 @@
     </div>
   </div>
 
-  <div class="app-container">
-    <img class="app-logo" src="img/logo_app2.png" alt="Logo App 2">
-    <div class="app-info">
-      <p class="info-title">Versão da Base:</p>
-      <p>2.0</p>
-      <p class="info-title">Versão das Configurações:</p>
-      <p>1.5</p>
-      <p class="info-title">Data de Postagem:</p>
-      <p>26/01/2024</p>
-      <p class="info-title">Descrição:</p>
-      <p>Aplicativo de Internet ilimitada<br>🚀operadora VIVO🟣</br></p>
-      <a class="download-link" onclick="downloadApp('D-NET-VPN_RT.apk')">BAIXAR D-NET-VPN RT</a>
-    </div>
-  </div>
-
-  <!-- Adicione mais blocos .app-container conforme necessÃÂ¡rio -->
+  <!-- Adicione mais blocos .app-container conforme necessário -->
 
   <script>
+    function openSideMenu() {
+      document.getElementById("sideMenu").style.width = "250px";
+    }
+
+    function closeSideMenu() {
+      document.getElementById("sideMenu").style.width = "0";
+    }
+
     function downloadApp(fileName) {
       var link = document.createElement("a");
-      link.href = "https://luffyelbrabo.github.io/pagina/baixar/" + fileName;
+      link.href = fileName;
       link.download = fileName;
-      document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
     }
   </script>
-
 </body>
 
 </html>
