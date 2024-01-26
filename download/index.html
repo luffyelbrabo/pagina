@@ -93,30 +93,41 @@
     }
 
     .side-menu {
-  height: 25%; /* Ajuste a altura desejada aqui */
-  width: 0;
+  height: 25%; /* Ajuste a altura conforme necessário */
+  width: 250px; /* Defina a largura inicial */
   position: fixed;
   top: 0;
-  left: -250px; /* Posicione inicialmente fora da tela */ 
+  left: -250px; /* Posicione inicialmente fora da tela */
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
   z-index: 2;
 }
+
 .side-menu.menu-open {
-  border: 3px solid #ff0000; /* Mantém a borda vermelha quando o menu está aberto */
   left: 0; /* Move o menu para a posição visível */
+  border: 3px solid #ff0000; /* Mantém a borda vermelha quando o menu está aberto */
 }
 
-    .side-menu a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 18px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-      background-color: transparent; /* Defina a cor de fundo inicial como transparente */
-    }
+/* Adicione este trecho para ajustar o posicionamento dos botões */
+.side-menu a {
+  padding: 15px 8px; /* Ajuste o espaçamento vertical e horizontal conforme necessário */
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  background-color: transparent; /* Defina a cor de fundo inicial como transparente */
+}
+
+.side-menu .close-btn {
+  padding: 15px 8px; /* Ajuste o espaçamento vertical e horizontal conforme necessário */
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
 
     .side-menu a:hover {
       color: #f1f1f1;
