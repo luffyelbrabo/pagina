@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fazer Upload e Baixar</title>
+</head>
+
+<body>
+  <h1>Fazer Upload e Baixar</h1>
+  <form action="upload.php" method="post" enctype="multipart/form-data">
+    <label for="arquivo">Escolha o arquivo APK:</label>
+    <input type="file" name="arquivo" id="arquivo" accept=".apk" required>
+    <button type="submit">Fazer Upload</button>
+  </form>
+
+  <!-- Exemplo de link para baixar o aplicativo após o upload -->
+  <p>Após o upload, <a href="seu_site.com/caminho/do/arquivo/upado.apk" download="UpadoAppNome.apk">clique aqui</a>
+    para baixar o aplicativo.</p>
+</body>
+
+</html>
