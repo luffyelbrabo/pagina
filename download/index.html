@@ -45,7 +45,6 @@
       padding: 10px;
       border-radius: 5px;
       margin-top: 10px;
-      margin-right: 10px; 
     }
 
     h1 {
@@ -63,6 +62,7 @@
       margin-bottom: 20px;
       width: 80%;
       box-sizing: border-box;
+      margin-top: 70px; /* ajuste para deixar espaço abaixo da barra azul */
     }
 
     .app-logo {
@@ -101,7 +101,6 @@
       background-color: #111;
       overflow-x: hidden;
       transition: 0.5s;
-      padding-top: 60px;
       z-index: 2;
     }
 
@@ -135,13 +134,11 @@
 
 <body>
   <div class="store-header">
-    <button class="menu-btn" onclick="openSideMenu()">☰ Menu</button>
+    <div class="menu-btn" onclick="openSideMenu()">☰ Menu</div>
     <div class="store-title">LOJA DE APLICATIVOS</div>
   </div>
 
   <div style="height: 10px; background-color: #ddd;"></div>
-
-  <div style="height: 20px;"></div>
 
   <div class="side-menu" id="sideMenu">
     <a href="javascript:void(0)" class="close-btn" onclick="closeSideMenu()">×</a>
@@ -167,7 +164,7 @@
     </div>
   </div>
   
-<div class="app-container">
+  <div class="app-container">
     <img class="app-logo" src="img/logo_app2.png" alt="Logo App 2">
     <div class="app-info">
       <p class="info-title">Versão da Base:</p>
