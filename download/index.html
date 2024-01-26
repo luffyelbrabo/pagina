@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Downloads de Apps</title>
+  <title>Loja de Aplicativos</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,13 +12,20 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh; /* Atualizado para ocupar 100% da altura da tela */
+      height: 100vh;
       margin: 0;
     }
 
     h1 {
       color: #333;
       margin-bottom: 20px;
+    }
+
+    .store-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
     }
 
     .app-container {
@@ -28,10 +35,11 @@
       text-align: center;
       padding: 20px;
       border: 2px solid #333;
+      border-top: 0; /* Removendo a borda superior para o primeiro elemento */
       margin-bottom: 20px;
       width: 80%;
-      height: 100%; /* Atualizado para ocupar 100% da altura da tela */
-      box-sizing: border-box; /* Evita que a borda adicione Ã  altura total */
+      height: 100%;
+      box-sizing: border-box;
     }
 
     .app-logo {
@@ -47,7 +55,7 @@
     .info-title {
       font-weight: bold;
       margin-bottom: 5px;
-      color: #007bff; /* Cor azul para destaque */
+      color: #007bff;
     }
 
     .download-link {
@@ -64,6 +72,8 @@
 
 <body>
   <h1>Downloads de Aplicativos</h1>
+
+  <div class="store-title">LOJA DE APLICATIVOS</div>
 
   <div class="app-container">
     <img class="app-logo" src="logo_app1.png" alt="Logo App 1">
