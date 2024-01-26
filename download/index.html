@@ -8,33 +8,56 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      max-width: 600px;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; /* Atualizado para ocupar 100% da altura da tela */
+      margin: 0;
     }
 
     h1 {
       color: #333;
+      margin-bottom: 20px;
     }
 
     .app-container {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      text-align: left;
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #333;
       margin-bottom: 20px;
+      width: 80%;
+      height: 100%; /* Atualizado para ocupar 100% da altura da tela */
+      box-sizing: border-box; /* Evita que a borda adicione Ã  altura total */
     }
 
     .app-logo {
       max-width: 100px;
       height: auto;
+      margin-bottom: 10px;
     }
 
     .app-info {
-      margin-left: 10px;
+      width: 100%;
+    }
+
+    .info-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #007bff; /* Cor azul para destaque */
     }
 
     .download-link {
       display: block;
       margin-top: 10px;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -45,10 +68,14 @@
   <div class="app-container">
     <img class="app-logo" src="logo_app1.png" alt="Logo App 1">
     <div class="app-info">
-      <p>VersÃ£o da Base: 1.0</p>
-      <p>VersÃ£o das ConfiguraÃ§Ãµes: 2.0</p>
-      <p>Data de Postagem: 26/01/2024</p>
-      <p>DescriÃ§Ã£o: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="info-title">VersÃ£o da Base:</p>
+      <p>1.0</p>
+      <p class="info-title">VersÃ£o das ConfiguraÃ§Ãµes:</p>
+      <p>2.0</p>
+      <p class="info-title">Data de Postagem:</p>
+      <p>26/01/2024</p>
+      <p class="info-title">DescriÃ§Ã£o:</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <a class="download-link" href="link_app1.apk" download="App1.apk">Baixar App 1</a>
     </div>
   </div>
@@ -56,10 +83,14 @@
   <div class="app-container">
     <img class="app-logo" src="logo_app2.png" alt="Logo App 2">
     <div class="app-info">
-      <p>VersÃ£o da Base: 2.0</p>
-      <p>VersÃ£o das ConfiguraÃ§Ãµes: 1.5</p>
-      <p>Data de Postagem: 26/01/2024</p>
-      <p>DescriÃ§Ã£o: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p class="info-title">VersÃ£o da Base:</p>
+      <p>2.0</p>
+      <p class="info-title">VersÃ£o das ConfiguraÃ§Ãµes:</p>
+      <p>1.5</p>
+      <p class="info-title">Data de Postagem:</p>
+      <p>26/01/2024</p>
+      <p class="info-title">DescriÃ§Ã£o:</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       <a class="download-link" href="link_app2.apk" download="App2.apk">Baixar App 2</a>
     </div>
   </div>
