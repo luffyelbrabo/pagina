@@ -93,11 +93,11 @@
     }
 
     .side-menu {
-  height: 40%; /* Ajuste a altura desejada aqui */
+  height: 25%; /* Ajuste a altura desejada aqui */
   width: 0;
   position: fixed;
   top: 0;
-  left: 0;
+  left: -250px; /* Posicione inicialmente fora da tela */ 
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
@@ -105,6 +105,7 @@
 }
 .side-menu.menu-open {
   border: 3px solid #ff0000; /* Mantém a borda vermelha quando o menu está aberto */
+  left: 0; /* Move o menu para a posição visível */
 }
 
     .side-menu a {
@@ -187,7 +188,7 @@
   <script>
     function openSideMenu() {
   var sideMenu = document.getElementById("sideMenu");
-  sideMenu.style.width = "200px";
+  sideMenu.style.width = "250px";
   sideMenu.classList.add("menu-open");
 }
 
