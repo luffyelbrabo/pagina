@@ -4,13 +4,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Download do Meu App</title>
+  <title>Downloads de Apps</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    .app-container {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .app-logo {
+      max-width: 100px;
+      height: auto;
+    }
+
+    .app-info {
+      margin-left: 10px;
+    }
+
+    .download-link {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Baixe Agora!</h1>
-  <p>Clique no link abaixo para baixar o aplicativo:</p>
-  <a href="https://raw.githubusercontent.com/luffyelbrabo/pagina/main/baixar/D-NET-VPN_RT.apk" download="D-NET-VPN_RT.apk">Baixar Aplicativo</a>
+  <h1>Downloads de Aplicativos</h1>
+
+  <div class="app-container">
+    <img class="app-logo" src="logo_app1.png" alt="Logo App 1">
+    <div class="app-info">
+      <p>VersÃ£o da Base: 1.0</p>
+      <p>VersÃ£o das ConfiguraÃ§Ãµes: 2.0</p>
+      <p>Data de Postagem: 26/01/2024</p>
+      <p>DescriÃ§Ã£o: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a class="download-link" href="link_app1.apk" download="App1.apk">Baixar App 1</a>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <img class="app-logo" src="logo_app2.png" alt="Logo App 2">
+    <div class="app-info">
+      <p>VersÃ£o da Base: 2.0</p>
+      <p>VersÃ£o das ConfiguraÃ§Ãµes: 1.5</p>
+      <p>Data de Postagem: 26/01/2024</p>
+      <p>DescriÃ§Ã£o: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <a class="download-link" href="link_app2.apk" download="App2.apk">Baixar App 2</a>
+    </div>
+  </div>
+
+  <!-- Adicione mais blocos .app-container conforme necessÃ¡rio -->
+
 </body>
 
 </html>
