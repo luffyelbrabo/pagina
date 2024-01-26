@@ -190,11 +190,14 @@
 
     function downloadApp(fileName) {
       var link = document.createElement("a");
-      link.href = fileName;
+      link.href = "https://luffyelbrabo.github.io/pagina/baixar/" + fileName;
       link.download = fileName;
+      document.body.appendChild(link);
       link.click();
+      document.body.removeChild(link);
     }
   </script>
+
 </body>
 
 </html>
