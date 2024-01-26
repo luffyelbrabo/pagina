@@ -2,9 +2,11 @@
 <html lang="pt-br">
 
 <head>
+ 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja de Aplicativos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -13,39 +15,41 @@
       align-items: center;
       justify-content: center;
       margin: 0;
+      margin-top: 30px; /* Adicionado para coincidir com a altura da barra azul */
     }
 
-    .store-header {
-      background-color: #007bff;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      width: 100%;
-      position: fixed;
-      top: 0;
-      z-index: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    
+.store-header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
 
-    .store-title {
-      font-size: 24px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #fff;
-    }
-
-    .menu-btn {
-      font-size: 24px;
-      cursor: pointer;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
+.menu-btn {
+  font-size: 24px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 10px; /* Adiciona espaço à direita do botão */
+}
+  
+  
+.store-title {
+   font-size: 24px;
+   font-weight: bold;
+   margin-bottom: 20px; /* Adicione margem na parte inferior do título */
+}
 
     h1 {
       color: #333;
@@ -62,7 +66,7 @@
       margin-bottom: 20px;
       width: 80%;
       box-sizing: border-box;
-      margin-top: 70px; /* ajuste para deixar espaço abaixo da barra azul */
+      margin-top: 40px; /* ajuste para deixar espaço abaixo da barra azul */
     }
 
     .app-logo {
@@ -93,11 +97,11 @@
     }
 
     .side-menu {
-  height: 25%; /* Ajuste a altura conforme necessário */
-  width: 250px; /* Defina a largura inicial */
+  height: calc(40% - 70px); /* Altura total menos a altura da barra azul */
+  width: 250px;
   position: fixed;
-  top: 0;
-  left: -250px; /* Posicione inicialmente fora da tela */
+  top: 70px; /* Altura da barra azul */
+  right: -250px;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
@@ -105,8 +109,8 @@
 }
 
 .side-menu.menu-open {
-  left: 0; /* Move o menu para a posição visível */
-  border: 3px solid #ff0000; /* Mantém a borda vermelha quando o menu está aberto */
+  right: 0; /* Move o menu para a posição visível no lado direito */
+  border: 3px solid #ff0000;
 }
 
 /* Adicione este trecho para ajustar o posicionamento dos botões */
@@ -141,19 +145,23 @@
       font-size: 36px;
       margin-left: 50px;
     }
-
-    .menu-btn {
-      margin-top: 10px;
-      margin-right: 10px;
-    }
+  
   </style>
 </head>
-
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <body>
-  <div class="store-header">
-    <div class="menu-btn" onclick="openSideMenu()">☰ Menu</div>
-    <div class="store-title">LOJA DE APLICATIVOS</div>
-  </div>
+  <div class="container-fluid">
+   <div class="row">
+      <div class="col-md-8">
+         <h1 class="store-title">LOJA DE APLICATIVOS</h1>
+      </div>
+      <div class="col-md-4">
+       <button class="btn btn-primary btn-lg menu-btn float-right" onclick="openSideMenu()">☰ Menu</button>
+      </div>
+   </div>
+</div>
 
   <div style="height: 10px; background-color: #ddd;"></div>
 
