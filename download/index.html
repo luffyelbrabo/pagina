@@ -93,16 +93,19 @@
     }
 
     .side-menu {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.5s;
-      z-index: 2;
-    }
+  height: 40%; /* Ajuste a altura desejada aqui */
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 2;
+}
+.side-menu.menu-open {
+  border: 3px solid #ff0000; /* Mantém a borda vermelha quando o menu está aberto */
+}
 
     .side-menu a {
       padding: 8px 8px 8px 32px;
@@ -111,10 +114,12 @@
       color: #818181;
       display: block;
       transition: 0.3s;
+      background-color: transparent; /* Defina a cor de fundo inicial como transparente */
     }
 
     .side-menu a:hover {
       color: #f1f1f1;
+      background-color: #007bff; /* Defina a cor de fundo ao passar o mouse */
     }
 
     .side-menu .close-btn {
@@ -181,12 +186,16 @@
 
   <script>
     function openSideMenu() {
-      document.getElementById("sideMenu").style.width = "250px";
-    }
+  var sideMenu = document.getElementById("sideMenu");
+  sideMenu.style.width = "200px";
+  sideMenu.classList.add("menu-open");
+}
 
-    function closeSideMenu() {
-      document.getElementById("sideMenu").style.width = "0";
-    }
+function closeSideMenu() {
+  var sideMenu = document.getElementById("sideMenu");
+  sideMenu.style.width = "0";
+  sideMenu.classList.remove("menu-open");
+}
 
     function downloadApp(fileName) {
       var link = document.createElement("a");
