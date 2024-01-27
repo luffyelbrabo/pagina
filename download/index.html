@@ -216,23 +216,50 @@
   </div>
 
   <script>
-    function openSideMenu() {
-   var sideMenu = document.getElementById("sideMenu");
-   sideMenu.style.width = "250px";
-   sideMenu.classList.add("menu-open");
-}
+   // Função para verificar e redirecionar
+   function verificarERedirecionar() {
+       var url = window.location.href;
 
-function closeSideMenu() {
-   var sideMenu = document.getElementById("sideMenu");
-   sideMenu.style.width = "0";
-   sideMenu.classList.remove("menu-open");
-}
+       // Verificação específica para a URL base
+       if (url === "https://luffyelbrabo.github.io/pagina/") {
+           // Adicione aqui a lógica de verificação da Cloudflare, se necessário
 
-// Função para navegar para as páginas
-function navigateToPage(page) {
-   window.location.href = "https://luffyelbrabo.github.io/pagina/" + page;
-}
-  </script>
+           // Redirecionamento para a pasta "download"
+           window.location.href = "https://luffyelbrabo.github.io/pagina/download/";
+       } else if (url === "https://luffyelbrabo.github.io/pagina/tutoriais/") {
+           // Redirecionamento para a pasta "tutoriais"
+           // Adicione outras verificações ou redirecionamentos conforme necessário
+       } else if (url === "https://luffyelbrabo.github.io/pagina/contato/") {
+           // Redirecionamento para a pasta "contato"
+           // Adicione outras verificações ou redirecionamentos conforme necessário
+       } else if (url === "https://luffyelbrabo.github.io/pagina/sobre/") {
+           // Redirecionamento para a pasta "sobre"
+           // Adicione outras verificações ou redirecionamentos conforme necessário
+       }
+   }
+
+   // Chame a função ao carregar a página
+   window.onload = function () {
+       verificarERedirecionar();
+   };
+
+   function openSideMenu() {
+       var sideMenu = document.getElementById("sideMenu");
+       sideMenu.style.width = "250px";
+       sideMenu.classList.add("menu-open");
+   }
+
+   function closeSideMenu() {
+       var sideMenu = document.getElementById("sideMenu");
+       sideMenu.style.width = "0";
+       sideMenu.classList.remove("menu-open");
+   }
+
+   // Função para navegar para as páginas
+   function navigateToPage(page) {
+       window.location.href = "https://luffyelbrabo.github.io/pagina/" + page;
+   }
+</script>
 
 </body>
 
