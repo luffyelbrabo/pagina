@@ -70,9 +70,9 @@
     }
 
     .app-logo {
-      max-width: 100px;
+      max-width: 250px;
       height: auto;
-      margin-bottom: 10px;
+      margin-bottom: 50px;
     }
 
     .app-info {
@@ -97,10 +97,10 @@
     }
 
     .side-menu {
-  height: calc(40% - 70px); /* Altura total menos a altura da barra azul */
+  height: calc(40% - 40px); /* Altura total menos a altura da barra azul */
   width: 250px;
   position: fixed;
-  top: 70px; /* Altura da barra azul */
+  top: 30px; /* Altura da barra azul */
   right: -250px;
   background-color: #111;
   overflow-x: hidden;
@@ -146,10 +146,13 @@
       margin-left: 50px;
     }
   
-  @media (min-width: 768px) {
-  .col-md-4 {
-    flex: 0 0 auto;
-    width: auto;
+  .menu-right {
+  margin-right: 5px !important;
+}
+
+@media (min-width: 768px) {
+  .menu-right {
+    margin-right: 0 !important;
   }
 }
   
@@ -159,24 +162,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <body>
-  <div class="col-md-8 mt-3 d-flex align-items-center justify-content-center">
-  <h1 class="store-title">LOJA DE APLICATIVOS</h1>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 mt-3">
+      <h1 class="store-title">LOJA DE APLICATIVOS</h1>
+    </div>
+    <div class="col-md-4 mt-3 d-flex align-items-center justify-content-end">
+   <button class="btn btn-primary btn-lg menu-btn" onclick="openSideMenu()">☰ Menu</button>
 </div>
-      <div class="col-md-4 mt-3 d-flex align-items-center justify-content-end">
-  <button class="btn btn-primary btn-lg menu-btn" onclick="openSideMenu()">☰ Menu</button>
-</div>
-      </div>
-   </div>
+  </div>
 </div>
 
   <div style="height: 10px; background-color: #ddd;"></div>
 
   <div class="side-menu" id="sideMenu">
-    <a href="javascript:void(0)" class="close-btn" onclick="closeSideMenu()">×</a>
-    <a href="tutoriais/">TUTORIAIS</a>
-    <a href="contato/">CONTATO</a>
-    <a href="sobre/">SOBRE</a>
-  </div>
+   <a href="javascript:void(0)" class="close-btn" onclick="closeSideMenu()">×</a>
+   <a href="javascript:void(0)" onclick="navigateToPage('download/')">DOWNLOAD</a>
+   <a href="javascript:void(0)" onclick="navigateToPage('tutoriais/')">TUTORIAIS</a>
+   <a href="javascript:void(0)" onclick="navigateToPage('contato/')">CONTATO</a>
+   <a href="javascript:void(0)" onclick="navigateToPage('sobre/')">SOBRE</a>
+</div>
 
   <div style="height: 80px;"></div>
 
@@ -212,25 +217,21 @@
 
   <script>
     function openSideMenu() {
-  var sideMenu = document.getElementById("sideMenu");
-  sideMenu.style.width = "250px";
-  sideMenu.classList.add("menu-open");
+   var sideMenu = document.getElementById("sideMenu");
+   sideMenu.style.width = "250px";
+   sideMenu.classList.add("menu-open");
 }
 
 function closeSideMenu() {
-  var sideMenu = document.getElementById("sideMenu");
-  sideMenu.style.width = "0";
-  sideMenu.classList.remove("menu-open");
+   var sideMenu = document.getElementById("sideMenu");
+   sideMenu.style.width = "0";
+   sideMenu.classList.remove("menu-open");
 }
 
-    function downloadApp(fileName) {
-      var link = document.createElement("a");
-      link.href = "https://luffyelbrabo.github.io/pagina/baixar/" + fileName;
-      link.download = fileName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }
+// Função para navegar para as páginas
+function navigateToPage(page) {
+   window.location.href = "https://luffyelbrabo.github.io/pagina/" + page;
+}
   </script>
 
 </body>
