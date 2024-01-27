@@ -97,7 +97,7 @@
     }
 
     .side-menu {
-  height: calc(40% - 40px); /* Altura total menos a altura da barra azul */
+  height: calc(50% - 40px); /* Altura total menos a altura da barra azul */
   width: 250px;
   position: fixed;
   top: 30px; /* Altura da barra azul */
@@ -216,53 +216,41 @@
   </div>
 
   <script>
-   // Função para verificar e redirecionar
-   function verificarERedirecionar() {
-       var url = window.location.href;
+    function openSideMenu() {
+        var sideMenu = document.getElementById("sideMenu");
+        sideMenu.style.width = "250px";
+        sideMenu.classList.add("menu-open");
+    }
 
-       // Verificação específica para a URL base
-       if (url === "https://luffyelbrabo.github.io/pagina/") {
-           // Adicione aqui a lógica de verificação da Cloudflare, se necessário
+    function closeSideMenu() {
+        var sideMenu = document.getElementById("sideMenu");
+        sideMenu.style.width = "0";
+        sideMenu.classList.remove("menu-open");
+    }
 
-           // Redirecionamento para a pasta "download"
-           window.location.href = "https://luffyelbrabo.github.io/pagina/download/";
-       } else if (url === "https://luffyelbrabo.github.io/pagina/tutoriais/") {
-           // Redirecionamento para a pasta "tutoriais"
-           // Adicione outras verificações ou redirecionamentos conforme necessário
-       } else if (url === "https://luffyelbrabo.github.io/pagina/contato/") {
-           // Redirecionamento para a pasta "contato"
-           // Adicione outras verificações ou redirecionamentos conforme necessário
-       } else if (url === "https://luffyelbrabo.github.io/pagina/sobre/") {
-           // Redirecionamento para a pasta "sobre"
-           // Adicione outras verificações ou redirecionamentos conforme necessário
-       }
-   }
+    // Função para navegar para as páginas
+    function navigateToPage(page) {
+        var baseUrl = "https://luffyelbrabo.github.io/pagina/";
+        var targetUrl = baseUrl + page;
 
-   // Chame a função ao carregar a página
-   window.onload = function () {
-       verificarERedirecionar();
-     
-      // Atraso de 100ms para permitir que o botão do menu funcione corretamente
-    setTimeout(verificarERedirecionar, 100);
-   };
+        // Verificação específica para a URL base
+        if (window.location.href === baseUrl) {
+            // Adicione aqui a lógica de verificação da Cloudflare, se necessário
 
+            // Redirecionamento para a página específica
+            if (page === "download/") {
+                targetUrl = "https://luffyelbrabo.github.io/pagina/download/";
+            } else if (page === "tutoriais/") {
+                targetUrl = "https://luffyelbrabo.github.io/pagina/tutoriais/";
+            } else if (page === "contato/") {
+                targetUrl = "https://luffyelbrabo.github.io/pagina/contato/";
+            } else if (page === "sobre/") {
+                targetUrl = "https://luffyelbrabo.github.io/pagina/sobre/";
+            }
+        }
 
-   function openSideMenu() {
-       var sideMenu = document.getElementById("sideMenu");
-       sideMenu.style.width = "250px";
-       sideMenu.classList.add("menu-open");
-   }
-
-   function closeSideMenu() {
-       var sideMenu = document.getElementById("sideMenu");
-       sideMenu.style.width = "0";
-       sideMenu.classList.remove("menu-open");
-   }
-
-   // Função para navegar para as páginas
-   function navigateToPage(page) {
-       window.location.href = "https://luffyelbrabo.github.io/pagina/" + page;
-   }
+        window.location.href = targetUrl;
+    }
 </script>
 
 </body>
