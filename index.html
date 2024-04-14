@@ -2,7 +2,6 @@
 <html lang="pt-br">
 
 <head>
- 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loja de Aplicativos</title>
@@ -10,46 +9,40 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       margin: 0;
-      margin-top: 30px; /* Adicionado para coincidir com a altura da barra azul */
+      margin-top: 30px;
     }
 
-    
-.store-header {
-  background-color: #007bff;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-}
+    .store-header {
+      background-color: #007bff;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+    }
 
-.menu-btn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 5px;
-  margin-right: 5px; /* Adiciona espaço à direita do botão */
-}
-  
-  
-.store-title {
-   font-size: 24px;
-   font-weight: bold;
-   margin-bottom: 20px; /* Adicione margem na parte inferior do título */
-}
+    .menu-btn {
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+
+    .store-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
 
     h1 {
       color: #333;
@@ -66,7 +59,7 @@
       margin-bottom: 20px;
       width: 80%;
       box-sizing: border-box;
-      margin-top: 40px; /* ajuste para deixar espaço abaixo da barra azul */
+      margin-top: 40px;
     }
 
     .app-logo {
@@ -97,45 +90,44 @@
     }
 
     .side-menu {
-  height: calc(50% - 40px); /* Altura total menos a altura da barra azul */
-  width: 250px;
-  position: fixed;
-  top: 30px; /* Altura da barra azul */
-  right: -250px;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  z-index: 2;
-}
+      height: calc(50% - 40px);
+      width: 250px;
+      position: fixed;
+      top: 30px;
+      right: -250px;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      z-index: 2;
+    }
 
-.side-menu.menu-open {
-  right: 0; /* Move o menu para a posição visível no lado direito */
-  border: 3px solid #ff0000;
-}
+    .side-menu.menu-open {
+      right: 0;
+      border: 3px solid #ff0000;
+    }
 
-/* Adicione este trecho para ajustar o posicionamento dos botões */
-.side-menu a {
-  padding: 15px 8px; /* Ajuste o espaçamento vertical e horizontal conforme necessário */
-  text-decoration: none;
-  font-size: 18px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-  background-color: transparent; /* Defina a cor de fundo inicial como transparente */
-}
+    .side-menu a {
+      padding: 15px 8px;
+      text-decoration: none;
+      font-size: 18px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+      background-color: transparent;
+    }
 
-.side-menu .close-btn {
-  padding: 15px 8px; /* Ajuste o espaçamento vertical e horizontal conforme necessário */
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+    .side-menu .close-btn {
+      padding: 15px 8px;
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
 
     .side-menu a:hover {
       color: #f1f1f1;
-      background-color: #007bff; /* Defina a cor de fundo ao passar o mouse */
+      background-color: #007bff;
     }
 
     .side-menu .close-btn {
@@ -145,44 +137,37 @@
       font-size: 36px;
       margin-left: 50px;
     }
-  
-  .menu-right {
-  margin-right: 5px !important;
-}
 
-@media (min-width: 768px) {
-  .menu-right {
-    margin-right: 0 !important;
-  }
-}
-  
+    .menu-right {
+      margin-right: 5px !important;
+    }
+
+    @media (min-width: 768px) {
+      .menu-right {
+        margin-right: 0 !important;
+      }
+    }
   </style>
 </head>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 <body>
   <div class="container-fluid">
-  <div class="row">
-    <div class="col-md-8 mt-3">
-      <h1 class="store-title">LOJA DE APLICATIVOS</h1>
+    <div class="row">
+      <div class="col-md-8 mt-3">
+        <h1 class="store-title">LOJA DE APLICATIVOS</h1>
+      </div>
+      <div class="col-md-4 mt-3 d-flex align-items-center justify-content-end">
+        <button class="btn btn-primary btn-lg menu-btn" onclick="openSideMenu()">☰ Menu</button>
+      </div>
     </div>
-    <div class="col-md-4 mt-3 d-flex align-items-center justify-content-end">
-   <button class="btn btn-primary btn-lg menu-btn" onclick="openSideMenu()">☰ Menu</button>
-</div>
   </div>
-</div>
-
-  <div style="height: 10px; background-color: #ddd;"></div>
 
   <div class="side-menu" id="sideMenu">
-   <a href="javascript:void(0)" class="close-btn" onclick="closeSideMenu()">Fechar</a>   
-   <a href="javascript:void(0)" onclick="navigateToPage('tutoriais/')">TUTORIAIS</a>
-   <a href="javascript:void(0)" onclick="navigateToPage('contato/')">CONTATO</a>
-   <a href="javascript:void(0)" onclick="navigateToPage('sobre/')">SOBRE</a>
-</div>
-
-  <div style="height: 80px;"></div>
+    <a href="javascript:void(0)" class="close-btn" onclick="closeSideMenu()">Fechar</a>
+    <a href="javascript:void(0)" onclick="navigateToPage('tutoriais/')">TUTORIAIS</a>
+    <a href="javascript:void(0)" onclick="navigateToPage('contato/')">CONTATO</a>
+    <a href="javascript:void(0)" onclick="navigateToPage('sobre/')">SOBRE</a>
+  </div>
 
   <div class="app-container">
     <img class="app-logo" src="https://download.dnetvpn.site/img/logo_app1.png" alt="Logo App 1">
@@ -195,10 +180,10 @@
       <p>26/01/2024</p>
       <p class="info-title">Descrição:</p>
       <p>Aplicativo de Internet ilimitada<br>🚀operadora VIVO 🟣</br></p>
-      <a class="download-link" onclick="download('/pagina/baixar/base_1.apk')">BAIXAR D-Net-VPN_4G+</a>
+      <a class="download-link" href="javascript:void(0)" onclick="download('/baixar/base_1.apk')" target="_self">BAIXAR APK</a>
     </div>
   </div>
-  
+
   <div class="app-container">
     <img class="app-logo" src="https://download.dnetvpn.site/img/logo_app2.png" alt="Logo App 2">
     <div class="app-info">
@@ -210,7 +195,7 @@
       <p>26/01/2024</p>
       <p class="info-title">Descrição:</p>
       <p>Aplicativo de Internet ilimitada<br>🚀operadora VIVO 🟣</br></p>
-      <a class="download-link" onclick="download('/pagina/baixar/base_2.apk')">BAIXAR D-NET-VPN_RT</a>
+      <a class="download-link" href="javascript:void(0)" onclick="download('/baixar/base_2.apk')" target="_self">BAIXAR APK</a>
     </div>
   </div>
 
@@ -250,8 +235,20 @@
 
         window.location.href = targetUrl;
     }
-</script>
-
+    
+    function download(fileName) {
+    // Concatene o nome do arquivo com o caminho da pasta de download
+    var fileUrl = "https://download.dnetvpn.site" + fileName;
+    
+    // Crie um link temporário e simule o clique para iniciar o download
+    var link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName.split("/").pop(); // Extrai o nome do arquivo do caminho
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+  </script>
 </body>
 
 </html>
