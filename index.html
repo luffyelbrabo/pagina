@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+ 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja de Aplicativos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      margin-top: 30px; /* Adicionado para coincidir com a altura da barra azul */
+    }
+
+    
+.store-header {
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.menu-btn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-right: 5px; /* Adiciona espaço à direita do botão */
+}
+  
+  
+.store-title {
+   font-size: 24px;
+   font-weight: bold;
+   margin-bottom: 20px; /* Adicione margem na parte inferior do título */
+}
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      border: 2px solid #333;
+      margin-bottom: 20px;
+      width: 80%;
+      box-sizing: border-box;
+      margin-top: 40px; /* ajuste para deixar espaço abaixo da barra azul */
+    }
+
+    .app-logo {
+      max-width: 250px;
+      height: auto;
+      margin-bottom: 50px;
+    }
+
+    .app-info {
+      width: 100%;
+    }
+
+    .info-title {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #007bff;
+    }
+
+    .download-link {
+      display: block;
+      margin-top: 10px;
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .side-menu {
+  height: calc(50% - 40px); /* Altura total menos a altura da barra azul */
+  width: 250px;
+  position: fixed;
+  top: 30px; /* Altura da barra azul */
+  right: -250px;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.side-menu.menu-open {
+  right: 0; /* Move o menu para a posição visível no lado direito */
+  border: 3px solid #ff0000;
+}
+
+/* Adicione este trecho para ajustar o posicionamento dos botões */
+.side-menu a {
+  padding: 15px 8px; /* Ajuste o espaçamento vertical e horizontal conforme necessário */
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  background-color: transparent; /* Defina a cor de fundo inicial como transparente */
+}
+
+.side-menu .close-btn {
+  padding: 15px 8px; /* Ajuste o espaçamento vertical e horizontal conforme necessário */
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+    .side-menu a:hover {
+      color: #f1f1f1;
+      background-color: #007bff; /* Defina a cor de fundo ao passar o mouse */
+    }
+
+    .side-menu .close-btn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+  
+  .menu-right {
+  margin-right: 5px !important;
+}
+
+@media (min-width: 768px) {
+  .menu-right {
+    margin-right: 0 !important;
+  }
+}
+  
+  </style>
+</head>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<body>
+  <div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 mt-3">
+      <h1 class="store-title">LOJA DE APLICATIVOS</h1>
+    </div>
+    <div class="col-md-4 mt-3 d-flex align-items-center justify-content-end">
+   <button class="btn btn-primary btn-lg menu-btn" onclick="openSideMenu()">☰ Menu</button>
+</div>
+  </div>
+</div>
+
+  <div style="height: 10px; background-color: #ddd;"></div>
+
+  <div class="side-menu" id="sideMenu">
+   <a href="javascript:void(0)" class="close-btn" onclick="closeSideMenu()">×</a>
+   <a href="javascript:void(0)" onclick="navigateToPage('download/')">DOWNLOAD</a>
+   <a href="javascript:void(0)" onclick="navigateToPage('tutoriais/')">TUTORIAIS</a>
+   <a href="javascript:void(0)" onclick="navigateToPage('contato/')">CONTATO</a>
+   <a href="javascript:void(0)" onclick="navigateToPage('sobre/')">SOBRE</a>
+</div>
+
+  <div style="height: 80px;"></div>
+
+  <div class="app-container">
+    <img class="app-logo" src="https://luffyelbrabo.github.io/pagina/img/logo_app1.png" alt="Logo App 1">
+    <div class="app-info">
+      <p class="info-title">Versão da Base:</p>
+      <p>1.0</p>
+      <p class="info-title">Versão das Configurações:</p>
+      <p>2.0</p>
+      <p class="info-title">Data de Postagem:</p>
+      <p>26/01/2024</p>
+      <p class="info-title">Descrição:</p>
+      <p>Aplicativo de Internet ilimitada<br>🚀operadora VIVO 🟣</br></p>
+      <a class="download-link" onclick="downloadApp('D-Net-VPN_4G+.apk')">BAIXAR D-Net-VPN_4G+</a>
+    </div>
+  </div>
+  
+  <div class="app-container">
+    <img class="app-logo" src="https://luffyelbrabo.github.io/pagina/img/logo_app2.png" alt="Logo App 2">
+    <div class="app-info">
+      <p class="info-title">Versão da Base:</p>
+      <p>1.0</p>
+      <p class="info-title">Versão das Configurações:</p>
+      <p>2.0</p>
+      <p class="info-title">Data de Postagem:</p>
+      <p>26/01/2024</p>
+      <p class="info-title">Descrição:</p>
+      <p>Aplicativo de Internet ilimitada<br>🚀operadora VIVO 🟣</br></p>
+      <a class="download-link" onclick="downloadApp('D-NET-VPN_RT.apk')">BAIXAR D-NET-VPN_RT</a>
+    </div>
+  </div>
+
+  <script>
+    function openSideMenu() {
+        var sideMenu = document.getElementById("sideMenu");
+        sideMenu.style.width = "250px";
+        sideMenu.classList.add("menu-open");
+    }
+
+    function closeSideMenu() {
+        var sideMenu = document.getElementById("sideMenu");
+        sideMenu.style.width = "0";
+        sideMenu.classList.remove("menu-open");
+    }
+
+    // Função para navegar para as páginas
+    function navigateToPage(page) {
+        var baseUrl = "https://luffyelbrabo.github.io/index.html";
+        var targetUrl = baseUrl + page;
+
+        // Verificação específica para a URL base
+        if (window.location.href === baseUrl) {
+            // Adicione aqui a lógica de verificação da Cloudflare, se necessário
+
+            // Redirecionamento para a página específica
+            if (page === "download/") {
+                targetUrl = "https://luffyelbrabo.github.io/pagina/baixar/";
+            } else if (page === "tutoriais/") {
+                targetUrl = "https://luffyelbrabo.github.io/pagina/tutoriais/";
+            } else if (page === "contato/") {
+                targetUrl = "https://luffyelbrabo.github.io/pagina/contato/";
+            } else if (page === "sobre/") {
+                targetUrl = "https://luffyelbrabo.github.io/pagina/sobre/";
+            }
+        }
+
+        window.location.href = targetUrl;
+    }
+</script>
+
+</body>
+
+</html>
