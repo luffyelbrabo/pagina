@@ -195,7 +195,7 @@
       <p>26/01/2024</p>
       <p class="info-title">Descrição:</p>
       <p>Aplicativo de Internet ilimitada<br>🚀operadora VIVO 🟣</br></p>
-      <a class="download-link" onclick="downloadApp('D-Net-VPN_4G+.apk')">BAIXAR D-Net-VPN_4G+</a>
+      <a class="download-link" onclick="download('D-Net-VPN_4G+.apk')">BAIXAR D-Net-VPN_4G+</a>
     </div>
   </div>
   
@@ -210,7 +210,7 @@
       <p>26/01/2024</p>
       <p class="info-title">Descrição:</p>
       <p>Aplicativo de Internet ilimitada<br>🚀operadora VIVO 🟣</br></p>
-      <a class="download-link" onclick="downloadApp('D-NET-VPN_RT.apk')">BAIXAR D-NET-VPN_RT</a>
+      <a class="download-link" onclick="download('D-NET-VPN_RT.apk')">BAIXAR D-NET-VPN_RT</a>
     </div>
   </div>
 
@@ -237,13 +237,13 @@
             // Adicione aqui a lógica de verificação da Cloudflare, se necessário
 
             // Redirecionamento para a página específica
-            if (page === "download/") {
+            if (page === "/download/") {
                 targetUrl = "https://luffyelbrabo.github.io/pagina/baixar/";
-            } else if (page === "tutoriais/") {
+            } else if (page === "/tutoriais/") {
                 targetUrl = "https://luffyelbrabo.github.io/pagina/tutoriais/";
-            } else if (page === "contato/") {
+            } else if (page === "/contato/") {
                 targetUrl = "https://luffyelbrabo.github.io/pagina/contato/";
-            } else if (page === "sobre/") {
+            } else if (page === "/sobre/") {
                 targetUrl = "https://luffyelbrabo.github.io/pagina/sobre/";
             }
         }
