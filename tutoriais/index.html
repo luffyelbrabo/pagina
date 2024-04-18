@@ -95,12 +95,12 @@
 
     <div class="side-menu" id="sideMenu">
         <div class="menu-buttons">
-            <button onclick="navigateToPage('download/')">Download</button>
+            <button onclick="navigateToPage('/index.html')">Início</button>
             <button onclick="navigateToPage('tutoriais/')">Tutoriais</button>
             <button onclick="navigateToPage('contato/')">Contato</button>
             <button onclick="navigateToPage('sobre/')">Sobre</button>
         </div>
-        <button class="close-btn" onclick="toggleMenu()">×</button>
+        <button class="close-btn" onclick="toggleMenu()">Fechar</button>
     </div>
 
     <!-- Exemplo de vídeos do YouTube -->
@@ -135,7 +135,7 @@
     </div>
 
     <!-- Exemplo de link de volta para a página principal -->
-    <p><a href="https://luffyelbrabo.github.io/pagina/download/">Voltar para a Página Principal</a></p>
+    <p><a href="/index.html">Voltar para a Página Principal</a></p>
 
     <script>
         // Função para abrir/fechar o menu
@@ -154,22 +154,26 @@
             }
         }
 
-        // Função para navegar para as páginas
-        function navigateToPage(page) {
-            var baseUrl = "https://luffyelbrabo.github.io/pagina/";
-            var targetUrl = baseUrl + page;
+         // Função para navegar para as páginas
+    function navigateToPage(page) {
+        var baseUrl = "https://download.dnetvpn.site";
+        var targetUrl = baseUrl + page;
 
-            if (window.location.href === baseUrl) {
-                if (page === "download/") {
-                    targetUrl = "https://luffyelbrabo.github.io/pagina/download/";
-                } else if (page === "tutoriais/") {
-                    targetUrl = "https://luffyelbrabo.github.io/pagina/tutoriais/";
-                } else if (page === "contato/") {
-                    targetUrl = "https://luffyelbrabo.github.io/pagina/contato/";
-                } else if (page === "sobre/") {
-                    targetUrl = "https://luffyelbrabo.github.io/pagina/sobre/";
-                }
+        // Verificação específica para a URL base
+        if (window.location.href === baseUrl) {
+            // Adicione aqui a lógica de verificação da Cloudflare, se necessário
+
+            // Redirecionamento para a página específica
+            if (page === "#") {
+                targetUrl = "https://download.dnetvpn.site/";
+            } else if (page === "/tutoriais/") {
+                targetUrl = "https://download.dnetvpn.site/tutoriais/";
+            } else if (page === "/contato/") {
+                targetUrl = "https://download.dnetvpn.site/contato/";
+            } else if (page === "/sobre/") {
+                targetUrl = "https://download.dnetvpn.site/sobre/";
             }
+        }
 
             window.location.href = targetUrl;
         }
