@@ -179,7 +179,7 @@
    <a href="javascript:void(0)" class="close-btn" onclick="closeSideMenu()">Fechar</a>   
    <a href="javascript:void(0)" onclick="navigateToPage('/tutoriais/')">TUTORIAIS</a>
    <a href="javascript:void(0)" onclick="navigateToPage('/contato/')">CONTATO</a>
-   <a href="javascript:void(0)" onclick="navigateToPage('/sobre/')">SOBRE</a>
+   <a href="https//luffyelbrabo.github.io/loja01/">SOBRE</a>
 </div>
 
   <div style="height: 80px;"></div>
@@ -233,13 +233,8 @@
 
     // Função para navegar para as páginas
     function navigateToPage(page) {
-    var baseUrl = "https://download.dnetvpn.site";
-    var targetUrl;
-
-    if (page === "/sobre/") {
-        targetUrl = "https://luffyelbrabo.github.io/loja01/";
-    } else {
-        targetUrl = baseUrl + page;
+        var baseUrl = "https://download.dnetvpn.site";
+        var targetUrl = baseUrl + page;
 
         // Verificação específica para a URL base
         if (window.location.href === baseUrl) {
@@ -252,7 +247,7 @@
                 targetUrl = "https://download.dnetvpn.site/tutoriais/";
             } else if (page === "/contato/") {
                 targetUrl = "https://download.dnetvpn.site/contato/";
-           }
+            }
         }
 
         window.location.href = targetUrl;
